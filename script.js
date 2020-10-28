@@ -2,7 +2,7 @@ const APP_KEY = 'Uny2fafSKzWKjK70mofcoDwe0vYH0PeHy3lEtuK5';
 
 
 window.addEventListener('load', function(){
-  fetch(`https://api.nasa.gov/planetary/apod?api_key=${APP_KEY}`)
+  fetch(`https://api.nasa.gov/planetary/apod?&api_key=${APP_KEY}`)
   .then(response => response.json())
   .then(data => {
     console.log(data)
@@ -18,26 +18,50 @@ window.addEventListener('load', function(){
     document.getElementById('url').src = url
 
   })
-  
   });
 
-  document.getElementById('submit').addEventListener('click', function(){
-    let DATE = document.getElementById('inputValue').value
-    fetch(`https://api.nasa.gov/planetary/apod?date=${DATE}&api_key=${APP_KEY}`)
+  window.addEventListener('load', function(){
+    let d = new Date()
+    d.setDate(d.getDate() -1);
+    let YESTERDAY = d.toISOString().slice(0,10);;
+    console.log(YESTERDAY);
+    
+    fetch(`https://api.nasa.gov/planetary/apod?date=${YESTERDAY}&api_key=${APP_KEY}`)
     .then(response => response.json())
     .then(data => {
       console.log(data)
+      let date1 = data.date
+      let title1 = data.title
+      let explanation1 = data.explanation
+      let url1 = data.url
   
-      let date = data.date
-      let title = data.title
-      let explanation = data.explanation
-      let url = data.url
-  
-      document.getElementById('date').innerHTML = date
-      document.getElementById('title').innerHTML = title
-      document.getElementById('explanation').innerHTML = explanation
-      document.getElementById('url').src = url
+      document.getElementById('date1').innerHTML = date1
+      document.getElementById('title1').innerHTML = title1
+      document.getElementById('explanation1').innerHTML = explanation1
+      document.getElementById('url1').src = url1
   
     })
-    document.getElementById('inputValue').value = '';
     });
+
+    window.addEventListener('load', function(){
+      let d = new Date()
+      d.setDate(d.getDate() -2);
+      let YESTERDAY1 = d.toISOString().slice(0,10);;
+      console.log(YESTERDAY1);
+      
+      fetch(`https://api.nasa.gov/planetary/apod?date=${YESTERDAY1}&api_key=${APP_KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        let date2 = data.date
+        let title2 = data.title
+        let explanation2 = data.explanation
+        let url2 = data.url
+    
+        document.getElementById('date2').innerHTML = date2
+        document.getElementById('title2').innerHTML = title2
+        document.getElementById('explanation2').innerHTML = explanation2
+        document.getElementById('url2').src = url2
+    
+      })
+      });
