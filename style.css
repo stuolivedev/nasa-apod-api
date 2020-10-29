@@ -1,9 +1,11 @@
 .html {
   height: 100%;
   font-family: 'Lato', sans-serif;
-  background: #02bbd1;
+  background: rgb(2,187,209);
+  background: linear-gradient(306deg, rgba(2,187,209,0.7259278711484594) 83%, rgba(0,0,0,0.7455357142857143) 100%);
   color: black;      
   font-size: 16px;
+  font-style: normal;
 }
 
 
@@ -36,6 +38,12 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .details {
+    text-align: start;
+    justify-content: center;
+  }
+}
 
 .imgContainer {
   width: 30vw;
@@ -59,7 +67,7 @@
 
 @media (max-width: 1024px) {
   .img {
-    width: 90vw;
+    width: 80vw;
   }
 }
 
@@ -69,15 +77,10 @@
   }
 }
 
-
-@media (max-width: 1024px) {
-  .details {
-    text-align: start;
-    justify-content: center;
-  }
-}
 h1 {
   font-size: 5vw;
+  padding: 0.5vw;
+  text-decoration: underline;
 }
 
 @media (max-width: 1024px) {
@@ -87,7 +90,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1vw;
+  font-size: 1.3vw;
+  padding: 0.5vw;
 }
 
 @media (max-width: 1024px) {
@@ -103,5 +107,16 @@ h2 {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 

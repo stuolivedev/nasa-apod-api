@@ -20,25 +20,25 @@ window.addEventListener('load', function(){
   })
   });
 
-  window.addEventListener('load', function(){
+ document.getElementById('previous').addEventListener('click', function(){
     let d = new Date()
     d.setDate(d.getDate() -1);
-    let YESTERDAY = d.toISOString().slice(0,10);;
+    let YESTERDAY = d.toISOString().slice(0,10);
     console.log(YESTERDAY);
     
     fetch(`https://api.nasa.gov/planetary/apod?date=${YESTERDAY}&api_key=${APP_KEY}`)
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      let date1 = data.date
-      let title1 = data.title
-      let explanation1 = data.explanation
-      let url1 = data.url
+      let date = data.date
+      let title = data.title
+      let explanation = data.explanation
+      let url = data.url
   
-      document.getElementById('date1').innerHTML = date1
-      document.getElementById('title1').innerHTML = title1
-      document.getElementById('explanation1').innerHTML = explanation1
-      document.getElementById('url1').src = url1
+      document.getElementById('date').innerHTML = date
+      document.getElementById('title').innerHTML = title
+      document.getElementById('explanation').innerHTML = explanation
+      document.getElementById('url').src = url
   
     })
     });
