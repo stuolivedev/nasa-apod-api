@@ -1,168 +1,108 @@
 .html {
   height: 100%;
-  font-family: 'Raleway', sans-serif;
-  color: white;   
-  background-color: white;   
+  font-family: 'Lato', sans-serif;
+  background: #fff;
+  color: #333;      
   font-size: 16px;
-  background: rgb(0,224,255);
-  background: linear-gradient(297deg, rgba(0,224,255,0.5914740896358543) 13%, rgba(255,33,104,0.7231267507002801) 100%);
+  font-style: normal;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 700px);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-.body {
+@media (max-width: 500px){
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 390px);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin-left: 5vw;
+  }
+}
+
+.details {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 411px;
-  height: 731px;
-  margin-top: 10vh;
-  background-image: url(src/night.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .details {
+    text-align: start;
+    justify-content: center;
+  }
+}
+
+.imgContainer {
+  width: 30vw;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .imgContainer {
+    width: 90vw;
+    justify-content: center;
+    margin-left: 2vw;
+  }
+}
+
+.img {
+  width: 30vw;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
-@media (max-width: 600px) {
-  .body {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(src/night.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+@media (max-width: 1024px) {
+  .img {
+    width: 80vw;
   }
 }
 
-.sunrise {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 411px;
-  height: 731px;
-  margin-top: 10vh;
-  background-image: url(src/sunrise.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-@media (max-width: 600px) {
-  .sunrise {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(src/sunrise.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+@media (max-width: 1024px) {
+  .column {
+    width: 90vw;
   }
-}
-
-.sunset {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 411px;
-  height: 731px;
-  margin-top: 10vh;
-  background-image: url(src/sunset.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-@media (max-width: 600px) {
-  .sunset {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(src/sunset.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-.day {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 411px;
-  height: 731px;
-  margin-top: 10vh;
-  background-image: url(src/day.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-@media (max-width: 600px) {
-  .day {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(src/day.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-.parent {
-  display: grid;
-  grid-template-columns: repeat(auto, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  justify-content: center;
-  margin-top: 5vh;
-  height: 30vh;
-}
-  
-  
-.column {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  text-align: center;
-  margin-top: 3vh;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
 }
 
 h1 {
-  font-size: 2.5vw;
-  padding: none;
-  margin: 0px;
+  font-size: 3vw;
+  padding: 0.5vw;
+  text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   h1 {
-    font-size: 11vw;
-    padding: none;
-    margin: 0px;
-  }
+  font-size: 7vw;
+}
 }
 
 h2 {
-  font-size: 3vh;
-  margin: 0px;
+  font-size: 1.3vw;
+  padding: 0.5vw;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   h2 {
-    font-size: 10vw;
-    padding: none;
-    margin: 0px;
-  }
+  font-size: 3vw;
+  text-align: center;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
